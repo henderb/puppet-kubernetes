@@ -6,7 +6,7 @@ class kubernetes::master(
     $etcd_host          = '127.0.0.1',
     $etcd_port          = '4001',
     $service_net        = '10.100.0.0/16',
-    $admission_control  = 'NamespaceAutoProvision,LimitRanger,ResourceQuota',
+    $admission_control  = 'NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ServiceAccount,ResourceQuota',
     $manage_firewall    = true,
 ){
     class { 'selinux':
